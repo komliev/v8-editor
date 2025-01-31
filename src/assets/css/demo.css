@@ -1,0 +1,10 @@
+.demo-container {
+    margin: 20px auto;
+
+    max-width: 800px;
+    width: 100%;
+}
+
+.demo-output {
+    margin: 40px 0;
+}

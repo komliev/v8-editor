@@ -1,0 +1,11 @@
+.v8-editor {
+    border: 1px solid #e0e0e0;
+
+    overflow: hidden;
+
+    width: 100%;
+}
+
+.v8-editor-container {
+    padding: 16px 32px;
+}
