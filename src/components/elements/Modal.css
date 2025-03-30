@@ -1,0 +1,120 @@
+.v8-editor-modal {
+    margin: 40px 0 0 0;
+    background: rgba(62, 39, 35,0.5);
+
+    width: 100%;
+    height: calc(100% - 40px);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 9999;
+}
+.v8-editor-modal.show {
+    display: flex;
+}
+
+    .v8-editor-modal .v8-editor-modal-dialog {
+        background: rgba(255,255,255,1);
+        border-radius: 3px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+
+        width: 75%;
+    }
+
+        .v8-editor-modal .v8-editor-modal-dialog .v8-editor-btn-close {
+            margin: 0;
+            padding: 0;
+            background: #FBE9E7;
+            border: 0;
+            border-radius: 50%;
+            box-shadow: none;
+
+            width: 1.5rem;
+            height: 1.5rem;
+
+            color: #D84315;
+
+            outline: none;
+
+            transition: background-color 300ms;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .v8-editor-modal .v8-editor-modal-dialog .v8-editor-btn-close:hover {
+            background: #FFCCBC;
+        }
+
+        .v8-editor-modal .v8-editor-modal-dialog .v8-editor-modal-header {
+            padding: 8px 16px;
+            border-bottom: 1px solid #f0f0f0;
+
+            height: 60px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .v8-editor-modal .v8-editor-modal-dialog .v8-editor-modal-header h4 {
+                margin: 0;
+                padding: 0;
+
+                font-size: 1rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                line-height: 1.2;
+            }
+
+            .v8-editor-modal .v8-editor-modal-dialog .v8-editor-modal-header button {
+            }
+
+        .v8-editor-modal .v8-editor-modal-dialog .v8-editor-modal-body {
+            padding: 8px 16px;
+        }
+
+        .v8-editor-modal .v8-editor-modal-dialog .v8-editor-modal-footer {
+            padding: 8px 16px;
+        }
+
+    .v8-editor .v8-editor-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1rem;
+
+        width: 100%;
+    }
+
+        .v8-editor .v8-editor-form-group.v8-editor-form-check {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .v8-editor .v8-editor-btn {
+            padding: 0 24px;
+            background: #3F51B5;
+            border: 0;
+            outline: none;
+            box-shadow: none;
+            border-radius: 3px;
+
+            font-size: 0.875rem;
+            line-height: 1;
+            color: #fff;
+
+            height: 40px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 0.25rem;
+        }

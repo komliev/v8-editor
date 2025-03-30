@@ -4,8 +4,26 @@
     overflow: hidden;
 
     width: 100%;
+    height: 442px;
+
+    position: relative;
 }
 
 .v8-editor-container {
     padding: 16px 32px;
+
+    max-height: 400px;
 }
+
+    .v8-editor-container [contenteditable="true"] {
+        white-space: pre-wrap;
+    }
+
+    .v8-editor-container [contenteditable="true"]:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    .v8-editor-container .v8-editor-source-code {
+        margin: -16px -32px -16px -32px;
+    }

@@ -1,8 +1,8 @@
 import './Toolbar.css';
 
-export default function Toolbar({children, className = ''}) {
+export default function Toolbar({ children, className = '' }) {
     return (
-        <div className={`v8-editor-toolbar ${className}`}>
+        <div className={`v8-editor-toolbar ${className}`.trim()}>
             {children}
         </div>
     );

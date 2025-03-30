@@ -1,39 +1,53 @@
-import React, {useEffect} from 'react';
-import MainEditor from "./components/MainEditor";
+import React, { useEffect, useState } from 'react';
+import MainEditor from './components/MainEditor';
 
-import './assets/css/base.css';
-import './assets/css/bootstrap-reboot.min.css';
-import './assets/css/demo.css';
+import 'simplebar-react/dist/simplebar.min.css';
 
-export default function App({}) {
-    const [editorOutputHTML, setEditorOutputHTML] = React.useState('');
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../src/assets/css/base.css';
+import '../src/assets/css/demo.css';
 
+export default function App() {
+    const [editorOutputHTML, setEditorOutputHTML] = useState('');
 
     useEffect(() => {
-        fetch("/demo/sample.html")
-            .then((res) => res.text())
-            .then((data) => setEditorOutputHTML(data));
+        const fetchSample = async () => {
+            const res = await fetch('/demo/sample.html');
+            const data = await res.text();
+            if (data?.trim()) {
+                setEditorOutputHTML(data);
+            }
+        };
+        fetchSample();
     }, []);
 
-
-    const onEditorSave = (html) => {
+    const handleEditorSave = (html) => {
         setEditorOutputHTML(html);
-    }
+    };
 
-
-    return (<>
-        <div className="v8-editor">
-            <MainEditor
-                value={editorOutputHTML}
-                onSave={onEditorSave}
-            />
-        </div>
-
-        <div className="demo-output">
-            <h2>Output</h2>
-            <div className="demo-output-content">
-                {editorOutputHTML ? <div dangerouslySetInnerHTML={{__html: editorOutputHTML}}></div> : <p><em>Editor output will appear here.</em></p>}
+    return (
+        <>
+            <div className="v8-editor">
+                <MainEditor
+                    config={{
+                        imageUploadUrl: '/demo/image-upload.json',
+                        fileUploadUrl: '/demo/file-upload.json',
+                    }}
+                    value={editorOutputHTML}
+                    onSave={handleEditorSave}
+                />
             </div>
-        </div>
-    </>);
+
+            <div className="demo-output">
+                <h2>Output</h2>
+                <div className="demo-output-content">
+                    {editorOutputHTML ? (
+                        <div dangerouslySetInnerHTML={{ __html: editorOutputHTML }} />
+                    ) : (
+                        <p><em>Editor output will appear here.</em></p>
+                    )}
+                </div>
+            </div>
+        </>
+    );
 }
